@@ -7,7 +7,7 @@
         <nav class="panel is-link">
         <p class="panel-heading">
             <%= @entry.meal_type %>
-            <%= @entry.category.title if entry.category.present? %>
+            <%= @entry.category.title if @entry.category.present? %>
         </p>
         </p>
         <div class="panel-block">
@@ -24,6 +24,7 @@
         </div>
 </nav>
 
+<% if user_signed_in? %>
 <div class="columns is-mobile">
     <div class="column">
         <%= link_to 'Edit', edit_entry_path(@entry), class: "button is-gray" %>
@@ -32,6 +33,7 @@
     </div>
     <div class="column"></div>
 </div>
+<% end %>
 
 </div>
 </div>

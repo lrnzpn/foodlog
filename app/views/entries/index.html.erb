@@ -4,6 +4,11 @@
     Foodlog &ndash; <%= DateTime.now.to_s(:nice_date) %> 
 <% end %>
 
+<% name = current_user.present? ? current_user.name : 'Stranger' %>
+<h1 class="columns mt-4 is-centered">
+    Welcome, <%= name %>
+</h1>
+
 <div class="columns mt-6 is-centered">
 <% @entries.each do |entry| %>
     <div class="column is-one-quarter">

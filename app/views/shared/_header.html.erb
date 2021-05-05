@@ -17,10 +17,22 @@
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
                 
-              <span class="navbar-item">
-              <!-- pass the text, path, then args -->
-                <%= link_to "Create new entry", new_entry_path, class: 'button is-success' %>
-              </span>
+                <% if user_signed_in? %>
+                    <span class="navbar-item">
+                    <!-- pass the text, path, then args -->
+                        <%= link_to "Create new entry", new_entry_path, class: 'button is-success' %>
+                    </span>  
+                    <span class="navbar-item">
+                        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'button is-danger' %>
+                    </span>
+                <% else %>
+                    <span class="navbar-item">
+                        <%= link_to "Register", new_user_registration_path, class: 'button is-primary' %>
+                    </span>
+                    <span class="navbar-item">
+                        <%= link_to "Sign in", new_user_session_path, class: 'button is-light' %>
+                    </span>
+                <% end %>
             </div>
           </div>
         </div>
