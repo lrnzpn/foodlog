@@ -7,8 +7,9 @@
         <nav class="panel is-link">
         <p class="panel-heading">
             <%= @entry.meal_type %>
+            <%= @entry.category.title if entry.category.present? %>
         </p>
-
+        </p>
         <div class="panel-block">
             Calories: <%= @entry.calories %>
         </div>
