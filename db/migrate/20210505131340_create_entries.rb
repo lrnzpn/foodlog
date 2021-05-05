@@ -7,7 +7,7 @@ class CreateEntries < ActiveRecord::Migration[6.1]
       t.integer :carbohydrates
       t.integer :fats
 
-      t.timestamps
+      t.timestamps # created at
     end
   end
 end
